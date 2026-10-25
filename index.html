@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>LINTERA - Lingkaran Interaktif untuk Matematika</title>
+  <meta name="description" content="Halaman Welcome interaktif LINTERA bersama Luna sang rubah penjelajah, mengantarkan siswa SMA menjelajahi konsep matematika lingkaran secara menyenangkan.">
+  
+  <!-- Google Fonts: Nunito & Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- CSS Utama -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       PORTRAIT ORIENTATION OVERLAY (Khusus HP saat posisi portrait)
+  ========================================================================= -->
+  <div id="orientation-overlay" class="orientation-overlay" role="dialog" aria-modal="true" aria-label="Pemberitahuan Rotasi Perangkat">
+    <div class="rotate-icon-wrapper">
+      <svg class="phone-icon-animated" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+        <line x1="12" y1="18" x2="12.01" y2="18"></line>
+      </svg>
+    </div>
+    <h2 class="overlay-title">Putar perangkatmu</h2>
+    <p class="overlay-message">Gunakan posisi landscape untuk pengalaman belajar LINTERA yang lebih nyaman.</p>
+  </div>
+
+  <!-- =========================================================================
+       MAIN WELCOME CONTAINER
+  ========================================================================= -->
+  <div class="welcome-container">
+
+    <!-- 1. NAVBAR (Tinggi ~90px, logo kiri, menu kanan, tombol bulat) -->
+    <header class="navbar" role="banner">
+      <a href="#" class="brand-wrapper" aria-label="LINTERA Beranda">
+        <div class="brand-logo">
+          <span class="brand-name">
+            L<span style="position:relative;">I<span class="dot-i"></span></span>NTERA
+          </span>
+          <!-- Aksen senyum kuning LINTERA -->
+          <svg class="smile-swoop" viewBox="0 0 100 16" fill="none">
+            <path d="M4 4C28 14 68 14 96 4" stroke="#FFD34E" stroke-width="5" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <div class="brand-divider"></div>
+
+        <div class="brand-tagline">
+          <span class="tagline-main">Lingkaran Interaktif</span>
+          <span class="tagline-sub">untuk Matematika SMA</span>
+        </div>
+      </a>
+
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><button type="button" class="nav-link" id="link-tentang">Tentang</button></li>
+          <li><button type="button" class="nav-link" id="link-fitur">Fitur</button></li>
+          <li><button type="button" class="nav-link" id="link-kontak">Kontak</button></li>
+        </ul>
+
+        <!-- Tombol Menu Hamburger Bulat -->
+        <button type="button" class="btn-round-menu" id="btn-menu-toggle" aria-label="Buka Menu" title="Menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- 2. HERO SECTION (Landscape Background, 2 Kolom Horizontal) -->
+    <main class="hero-section" aria-label="Sambutan LINTERA">
+      <div class="hero-overlay-scrim"></div>
+
+      <div class="hero-content">
+        <!-- Kolom Kiri: Teks Sambutan dan Tombol -->
+        <div class="hero-left">
+          
+          <div class="title-container">
+            <!-- Sparkles dekorasi kuning -->
+            <svg class="sparkle-left" width="32" height="32" viewBox="0 0 36 36" fill="currentColor">
+              <path d="M12 2C13 6 15 10 18 12C15 14 13 18 12 22C11 18 9 14 6 12C9 10 11 6 12 2Z"/>
+            </svg>
+            <svg class="sparkle-right" width="24" height="24" viewBox="0 0 36 36" fill="currentColor">
+              <path d="M18 6C19 10 21 13 24 15C21 17 19 20 18 24C17 20 15 17 12 15C15 13 17 10 18 6Z"/>
+            </svg>
+
+            <h1 class="hero-title">
+              <span class="title-halo">Halo,</span>
+              <span class="title-penjelajah">
+                Penjelajah!
+                <!-- Aksen Garis Kuning di Bawah Tulisan -->
+                <svg class="underline-swoosh" viewBox="0 0 240 16" fill="none" preserveAspectRatio="none">
+                  <path d="M3 10C50 3 180 3 237 11" stroke="#FFD34E" stroke-width="6" stroke-linecap="round"/>
+                </svg>
+              </span>
+            </h1>
+          </div>
+
+          <p class="hero-description">
+            Siap menjelajahi dunia matematika yang seru dan menyenangkan bersama LINTERA?
+          </p>
+
+          <!-- Tombol Mulai Jelajahi -->
+          <div class="cta-container">
+            <button type="button" class="btn-primary-explore" id="btn-explore" aria-label="Mulai Jelajahi LINTERA">
+              <span>Mulai Jelajahi</span>
+              <span class="btn-icon-circle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Kolom Kanan: Karakter Luna -->
+        <div class="hero-right">
+          
+          <!-- Plang Arah Matematika (+, ÷, ×) -->
+          <div class="math-signpost">
+            <div class="signpost-top"></div>
+            <div class="sign-arrow sign-plus">+</div>
+            <div class="sign-arrow sign-divide">÷</div>
+            <div class="sign-arrow sign-multiply">×</div>
+            <div class="signpost-base"></div>
+          </div>
+
+          <!-- Aksen Pi (π) Melayang -->
+          <div class="floating-pi-badge">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFD34E">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+            <span>π</span>
+          </div>
+
+          <!-- Karakter Luna (Fokus Visual Utama, Proporsi Asli) -->
+          <div class="luna-wrapper">
+            <img 
+              src="assets/luna.png" 
+              alt="Luna, rubah oranye ceria maskot LINTERA" 
+              class="luna-image"
+            >
+          </div>
+
+        </div>
+      </div>
+    </main>
+
+  </div>
+
+  <!-- =========================================================================
+       DRAWER MENU SAMPING
+  ========================================================================= -->
+  <div id="nav-drawer" class="modal-backdrop">
+    <div class="modal-box" style="max-width: 320px; margin-left: auto; margin-right: 16px;">
+      <div class="modal-header">
+        <h3 class="modal-title">Menu LINTERA</h3>
+        <button type="button" class="modal-btn-close" id="drawer-close">&times;</button>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:12px; margin-top:16px;">
+        <button type="button" class="nav-link" id="drawer-tentang" style="text-align:left; font-size:1.05rem;">Tentang LINTERA</button>
+        <button type="button" class="nav-link" id="drawer-fitur" style="text-align:left; font-size:1.05rem;">Fitur Pembelajaran</button>
+        <button type="button" class="nav-link" id="drawer-kontak" style="text-align:left; font-size:1.05rem;">Kontak Kami</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       MODAL: TENTANG LINTERA
+  ========================================================================= -->
+  <div id="modal-tentang" class="modal-backdrop">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 class="modal-title">Tentang LINTERA</h3>
+        <button type="button" class="modal-btn-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p><strong>LINTERA (Lingkaran Interaktif untuk Matematika)</strong> adalah media pembelajaran digital yang dirancang untuk siswa SMA dalam memahami materi lingkaran secara konseptual, menyenangkan, dan interaktif.</p>
+        <br>
+        <p>Didampingi oleh <strong>Luna</strong>, siswa dapat mengeksplorasi rumus, simulasi dinamis, dan tantangan matematika yang aplikatif dalam kehidupan nyata.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-secondary">Tutup</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       MODAL: FITUR
+  ========================================================================= -->
+  <div id="modal-fitur" class="modal-backdrop">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 class="modal-title">Fitur Pembelajaran</h3>
+        <button type="button" class="modal-btn-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <ul style="padding-left: 20px; display:flex; flex-direction:column; gap:10px;">
+          <li><strong>Simulasi Geometri Dinamis:</strong> Tarik busur dan titik sudut lingkaran secara langsung.</li>
+          <li><strong>Pembuktian Rumus Visual:</strong> Memahami asal-usul konstanta π, luas, dan keliling.</li>
+          <li><strong>Petualangan Bersama Luna:</strong> Misi kuis interaktif dengan umpan balik langsung.</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-secondary">Tutup</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       MODAL: KONTAK
+  ========================================================================= -->
+  <div id="modal-kontak" class="modal-backdrop">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 class="modal-title">Hubungi Kami</h3>
+        <button type="button" class="modal-btn-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="contact-form" style="display:flex; flex-direction:column; gap:12px;">
+          <div>
+            <label style="font-size:0.8rem; font-weight:700; color:#123B8A; display:block; margin-bottom:4px;">Nama</label>
+            <input type="text" required placeholder="Nama kamu..." style="width:100%; padding:8px 12px; border-radius:10px; border:1px solid #CBD5E1; font-family:inherit;">
+          </div>
+          <div>
+            <label style="font-size:0.8rem; font-weight:700; color:#123B8A; display:block; margin-bottom:4px;">Email</label>
+            <input type="email" required placeholder="email@sekolah.sch.id" style="width:100%; padding:8px 12px; border-radius:10px; border:1px solid #CBD5E1; font-family:inherit;">
+          </div>
+          <div>
+            <label style="font-size:0.8rem; font-weight:700; color:#123B8A; display:block; margin-bottom:4px;">Pesan</label>
+            <textarea rows="3" required placeholder="Tuliskan saran atau masukan..." style="width:100%; padding:8px 12px; border-radius:10px; border:1px solid #CBD5E1; font-family:inherit;"></textarea>
+          </div>
+          <button type="submit" class="btn-secondary" style="margin-top:8px;">Kirim Pesan</button>
+        </form>
+        <div id="contact-success" style="display:none; text-align:center; padding:16px 0; color:#059669; font-weight:700;">
+          Terima kasih! Pesan kamu telah terkirim.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       MODAL: DASHBOARD PLACEHOLDER
+  ========================================================================= -->
+  <div id="modal-dashboard" class="modal-backdrop">
+    <div class="modal-box" style="text-align: center;">
+      <div style="width:60px; height:60px; border-radius:50%; background:#EBF5FF; color:#2875FB; display:flex; align-items:center; justify-content:center; margin:0 auto 16px;">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="7" height="7"></rect>
+          <rect x="14" y="3" width="7" height="7"></rect>
+          <rect x="14" y="14" width="7" height="7"></rect>
+          <rect x="3" y="14" width="7" height="7"></rect>
+        </svg>
+      </div>
+      <h3 class="modal-title" style="margin-bottom:8px;">Gerbang Dashboard LINTERA</h3>
+      <p class="modal-body" style="margin-bottom:20px;">
+        Selamat datang di ruang pembelajaran matematika lingkaran! Tahap dashboard sedang dipersiapkan untuk petualangan materi berikutnya.
+      </p>
+      <div style="display:flex; justify-content:center;">
+        <button type="button" class="btn-secondary">Kembali ke Halaman Welcome</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script JS -->
+  <script src="script.js"></script>
+</body>
+</html>
